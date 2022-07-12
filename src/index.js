@@ -10,7 +10,7 @@ import removeLi from './modules/removeFunction.js';
 // --------------------------variables--------------------------------//
 const input = document.querySelector('.input-form');
 const clearInput = document.querySelector('.undo-btn');
-const clearbtn = document.querySelector('.clear-btn');
+const clearBtn = document.querySelector('.clear-btn');
 const reset = document.querySelector('.reset-icon');
 
 // event listeners
@@ -30,7 +30,7 @@ clearInput.addEventListener('click', () => {
   input.value = '';
 });
 
-clearbtn.addEventListener('click', () => {
+clearBtn.addEventListener('click', () => {
   const completedItems = listData.filter((item) => item.completed === true);
   completedItems.forEach((element) => {
     removeLi(element);

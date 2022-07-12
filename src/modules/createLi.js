@@ -1,6 +1,6 @@
 // --------------------------imports--------------------------------//
 
-import checkfunction from './cbFunction.js';
+import checkFunction from './cbFunction.js';
 import edit from './editFunction.js';
 import removeLi from './removeFunction.js';
 
@@ -12,6 +12,7 @@ const createLi = (index) => {
   // create li
   const li = document.createElement('li');
   li.classList.add('task-container');
+
   // create input
   const checkBox = document.createElement('input');
   checkBox.setAttribute('type', 'checkbox');
@@ -32,6 +33,10 @@ const createLi = (index) => {
   li.appendChild(thrashIcon);
   ul.appendChild(li);
 
+  if (index.completed === true) {
+    checkBox.click();
+    li.classList.toggle('completed');
+  }
   // functions
 
   thrashIcon.addEventListener('click', () => {
@@ -48,7 +53,7 @@ const createLi = (index) => {
   });
 
   checkBox.addEventListener('click', () => {
-    checkfunction(li, index);
+    checkFunction(li, index);
   });
 };
 
